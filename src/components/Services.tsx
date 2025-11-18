@@ -204,7 +204,7 @@
 "use client"
 
 import { useRef, useState, useEffect } from "react"
-import { motion, useMotionValue, useSpring, useAnimation } from "framer-motion"
+import { motion, useAnimation } from "framer-motion"
 import { Zap, Rocket, Code, Smartphone, Database, ShieldCheck, ChevronLeft, ChevronRight } from "lucide-react"
 
 type Service = {
@@ -216,8 +216,9 @@ type Service = {
   bgGradient?: string
 }
 
-export default function Services() {
-  const services: Service[] = [
+// NOTE: I'm defining the services array outside the component to keep the diff clean, 
+// but in your original code, it's fine to keep it inside the 'Services' component.
+const services: Service[] = [
     {
       icon: Zap,
       title: "AI That Predicts and Automates",
@@ -272,31 +273,54 @@ export default function Services() {
       gradient: "from-[#0082BE] via-[#0A6EAA] to-[#0A64A0]",
       bgGradient: "from-white to-blue-50 dark:from-[#0082BE]/10 dark:to-[#0A64A0]/10",
     },
-  ]
+]
 
-  // Create a duplicate set of services to enable seamless looping
-  const infiniteServices = [...services, ...services]
 
-  function ServiceCarousel({ services: infiniteServices }: { services: Service[] }) {
+function ServiceCarousel({ services: infiniteServices }: { services: Service[] }) {
     const containerRef = useRef<HTMLDivElement | null>(null)
     const controls = useAnimation()
     const [isHovered, setIsHovered] = useState(false)
     const [containerWidth, setContainerWidth] = useState(0)
     const scrollDuration = 40 // seconds for one full loop (adjustable)
     const scrollAmount = useRef(0)
+
+    // NEW: State for responsive items per view and gap
+    const [layout, setLayout] = useState({
+      itemsPerView: 3,
+      itemGap: 32, // md:gap-8 = 32px
+    });
+
+    const itemsPerView = layout.itemsPerView
+    const itemGap = layout.itemGap
     
-    // Determine the number of services and necessary gap
-    const itemsPerView = 3
-    const itemGap = 32 // md:gap-8 = 32px
+    // Check screen width for layout changes
+    useEffect(() => {
+        const checkLayout = () => {
+            const isMobile = window.innerWidth < 768; // Tailwind's 'md' breakpoint
+            setLayout({
+                itemsPerView: isMobile ? 1 : 3,
+                itemGap: isMobile ? 16 : 32, // Use a smaller gap for mobile (gap-4)
+            });
+        };
+
+        checkLayout();
+        window.addEventListener('resize', checkLayout);
+        return () => window.removeEventListener('resize', checkLayout);
+    }, []);
 
     const startScrolling = async () => {
         if (!containerRef.current) return
         
-        const cardWidth = containerWidth / itemsPerView
+        // This is the core change: Card width must be calculated relative to the container,
+        // which now holds 'itemsPerView' cards plus their gaps.
+        const cardWidth = (containerWidth - itemGap * (itemsPerView - 1)) / itemsPerView
+        
         // Calculate the total width of the original services (6 cards + 5 gaps)
+        // This is the distance we need to scroll before the loop resets
         const totalOriginalWidth = cardWidth * services.length + itemGap * (services.length - 1)
         
-        scrollAmount.current = totalOriginalWidth + itemGap
+        // The scroll amount is the width of the original list segment.
+        scrollAmount.current = totalOriginalWidth + itemGap;
         
         await controls.start({
             x: -scrollAmount.current,
@@ -315,7 +339,7 @@ export default function Services() {
     useEffect(() => {
         const updateWidth = () => {
             if (containerRef.current) {
-                // Use scrollWidth to get the full content width for calculation
+                // Use clientWidth to get the visible width of the container
                 setContainerWidth(containerRef.current.clientWidth)
             }
         }
@@ -324,8 +348,11 @@ export default function Services() {
         return () => window.removeEventListener('resize', updateWidth)
     }, [])
     
-    // Start or stop the scroll animation
+    // Start or stop the scroll animation (Reruns on layout change)
     useEffect(() => {
+        // Reset position on layout change to prevent weird jumps
+        controls.set({ x: 0 }); 
+        
         if (containerWidth > 0) {
             if (!isHovered) {
                 startScrolling()
@@ -334,24 +361,18 @@ export default function Services() {
                 controls.stop()
             }
         }
-    }, [isHovered, containerWidth])
+    }, [isHovered, containerWidth, itemsPerView]) // Added itemsPerView as a dependency
 
-    // No need for Chevron buttons for infinite auto-scroll, but keeping for direct user interaction if required
+    // Manual Scroll logic is more complex with variable card widths, 
+    // but the auto-scroll handles the main requirement. I'm keeping 
+    // the manual functions, but the buttons are commented out.
     const manualScroll = (direction: number) => {
-        // Calculate current x position
+        controls.stop();
         const currentX = controls.get().x || 0
-        const cardWidth = containerWidth / itemsPerView
+        const cardWidth = (containerWidth - itemGap * (itemsPerView - 1)) / itemsPerView
         const step = cardWidth + itemGap
 
         let newX = currentX + (direction * step)
-
-        // Ensure we don't jump too far if controls were running
-        if (!isHovered) {
-             controls.stop() // Stop auto-scroll first
-        }
-        
-        // Manual bounds check for a cleaner look when manually scrolling
-        // Though in an infinite loop setup, bounds are less critical.
         
         controls.start({
             x: newX,
@@ -359,30 +380,43 @@ export default function Services() {
         })
     }
 
+    // Dynamic Card Width Calculation for the style prop
+    const cardCalculatedWidth = containerWidth > 0 
+        ? `calc((${containerWidth}px - ${itemGap * (itemsPerView - 1)}px) / ${itemsPerView})`
+        : `calc(100% / ${itemsPerView} - ${itemGap * 2}px)`; // Fallback
+
     return (
       <div className="relative w-full overflow-hidden">
-        {/* Manual Scroll Buttons (Optional, but included for user control) */}
-          {/* <button
-            aria-label="Previous"
-            onClick={() => manualScroll(1)}
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full shadow-lg flex items-center justify-center bg-white/90 dark:bg-gray-800/80 transition transform hover:scale-105 opacity-100"
-          >
-            <ChevronLeft className="w-5 h-5 text-gray-800 dark:text-white" />
-          </button> */}
-
+        {/* Manual Scroll Buttons (Uncomment to use with manualScroll function) */}
+        {/* {itemsPerView === 1 && ( // Only show buttons on mobile for manual scrolling
+             <button
+               aria-label="Previous"
+               onClick={() => manualScroll(1)}
+               className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full shadow-lg flex items-center justify-center bg-white/90 dark:bg-gray-800/80 transition transform hover:scale-105 opacity-100"
+             >
+               <ChevronLeft className="w-5 h-5 text-gray-800 dark:text-white" />
+             </button>
+        )} */}
+        
         <div
           ref={containerRef}
-          className="relative flex gap-8 py-4"
-          // Set min-w-full to properly calculate container width for card sizing
+          className={`relative flex py-4`}
+          // Use dynamic gap based on screen size
         >
           {/* Outer container to catch hover events */}
           <motion.div
-            className="flex gap-8"
+            className={`flex`}
+            style={{ gap: `${itemGap}px` }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             animate={controls}
-            // Ensure the entire track has enough width for the animation
-            style={{ width: `${(containerWidth / itemsPerView) * infiniteServices.length + itemGap * (infiniteServices.length - 1)}px` }}
+            // The total width is the sum of all cards and gaps in the infinite list
+            style={{ 
+              width: containerWidth > 0 
+                ? `${(containerWidth / itemsPerView) * infiniteServices.length + itemGap * (infiniteServices.length - 1)}px` 
+                : 'auto',
+              gap: `${itemGap}px` 
+            }}
           >
             {infiniteServices.map((s, idx) => (
               <motion.div
@@ -390,9 +424,8 @@ export default function Services() {
                 initial={{ opacity: 1, y: 0 }}
                 className="shrink-0 h-80"
                 style={{
-                    // Dynamically set width based on itemsPerView and gap
-                    width: `calc(100vw / ${itemsPerView} - ${itemGap * 2}px)`, // Approximation for width of card
-                    maxWidth: `calc(${containerWidth}px / ${itemsPerView} - ${itemGap}px)` // Refined Max Width
+                  // Apply the responsive calculated width
+                  width: cardCalculatedWidth,
                 }}
               >
                 <div className={`relative h-full ${s.bgGradient ? `bg-linear-to-br ${s.bgGradient}` : 'bg-white'} border border-gray-200 dark:border-gray-800 rounded-2xl p-4 md:p-6 shadow-md hover:shadow-2xl transition-all duration-300 group flex flex-col`}>
@@ -422,16 +455,21 @@ export default function Services() {
           </motion.div>
         </div>
 
-        {/* <button
-          aria-label="Next"
-          onClick={() => manualScroll(-1)}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full shadow-lg flex items-center justify-center bg-white/90 dark:bg-gray-800/80 transition transform hover:scale-105 opacity-100"
-        >
-          <ChevronRight className="w-5 h-5 text-gray-800 dark:text-white" />
-        </button> */}
+        {/* {itemsPerView === 1 && (
+             <button
+               aria-label="Next"
+               onClick={() => manualScroll(-1)}
+               className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full shadow-lg flex items-center justify-center bg-white/90 dark:bg-gray-800/80 transition transform hover:scale-105 opacity-100"
+             >
+               <ChevronRight className="w-5 h-5 text-gray-800 dark:text-white" />
+             </button>
+        )} */}
       </div>
     )
-  }
+}
+
+export default function Services() {
+  const infiniteServices = [...services, ...services]
 
   return (
     <section id="services" className="py-16 md:py-24 relative overflow-hidden bg-white">
@@ -441,7 +479,7 @@ export default function Services() {
       {/* Global CSS for gradient-blue class */}
       <style jsx global>{`
         .gradient-blue {
-            background: linear-gradient(to right, #0A6EAA, #14508C);
+          background: linear-gradient(to right, #0A6EAA, #14508C);
         }
       `}</style>
 
