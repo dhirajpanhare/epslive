@@ -95,7 +95,7 @@ function ServiceCarousel({ services: infiniteServices }: { services: Service[] }
       setLayout({
         itemsPerView: isMobile ? 1 : 3,
         itemGap: isMobile ? 16 : 32, // Use a smaller gap for mobile (gap-4)
-      });
+      });     
     };
 
     checkLayout();
