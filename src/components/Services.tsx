@@ -182,16 +182,7 @@ function ServiceCarousel({ services: infiniteServices }: { services: Service[] }
 
   return (
     <div className="relative w-full overflow-hidden">
-      {/* Manual Scroll Buttons (Uncomment to use with manualScroll function) */}
-      {/* {itemsPerView === 1 && ( // Only show buttons on mobile for manual scrolling
-             <button
-               aria-label="Previous"
-               onClick={() => manualScroll(1)}
-               className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full shadow-lg flex items-center justify-center bg-white/90 dark:bg-gray-800/80 transition transform hover:scale-105 opacity-100"
-             >
-               <ChevronLeft className="w-5 h-5 text-gray-800 dark:text-white" />
-             </button>
-        )} */}
+     
 
       <div
         ref={containerRef}
@@ -250,15 +241,7 @@ function ServiceCarousel({ services: infiniteServices }: { services: Service[] }
         </motion.div>
       </div>
 
-      {/* {itemsPerView === 1 && (
-             <button
-               aria-label="Next"
-               onClick={() => manualScroll(-1)}
-               className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full shadow-lg flex items-center justify-center bg-white/90 dark:bg-gray-800/80 transition transform hover:scale-105 opacity-100"
-             >
-               <ChevronRight className="w-5 h-5 text-gray-800 dark:text-white" />
-             </button>
-        )} */}
+   
     </div>
   )
 }

@@ -292,20 +292,20 @@ export default function EngageTalentModal({ isOpen, onClose }: EngageTalentModal
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="p-6 bg-linear-to-br from-[#0A6EAA]/10 to-[#14508C]/10 dark:from-[#0A6EAA]/20 dark:to-[#14508C]/20 rounded-xl border border-[#0A6EAA]/20 dark:border-[#0A6EAA]/30"
+                    className="p-6 bg-linear-to-br from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF] rounded-xl border border-[#0A6EAA]/20 dark:border-[#0A6EAA]/30"
                   >
                     <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-white">
                       Developer Package
                     </h3>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#0A6EAA] mt-2 shrink-0" />
+                        <div className="w-2 h-2 rounded-full gradient-light mt-2 shrink-0" />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
                           Access to experienced developers
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#0A6EAA] mt-2 shrink-0" />
+                        <div className="w-2 h-2 rounded-full gradient-light  mt-2 shrink-0" />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
                           Flexible team scaling options
                         </span>
@@ -318,7 +318,7 @@ export default function EngageTalentModal({ isOpen, onClose }: EngageTalentModal
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="p-6 bg-linear-to-br from-[#14508C]/10 to-[#0A6EAA]/10 dark:from-[#14508C]/20 dark:to-[#0A6EAA]/20 rounded-xl border border-[#14508C]/20 dark:border-[#14508C]/30"
+                    className="p-6 bg-linear-to-br from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF] rounded-xl border border-[#14508C]/20 dark:border-[#14508C]/30"
                   >
                     <h3 className="text-lg font-bold mb-4 text-slate-900 dark:text-white">
                       What's Included
@@ -363,7 +363,7 @@ export default function EngageTalentModal({ isOpen, onClose }: EngageTalentModal
                     </Button>
                     <Button
                       size="lg"
-                      className="flex-1 gradient-blue text-white"
+                      className="flex-1 gradient-light text-white"
                       onClick={handleSubmit}
                     >
                       Submit

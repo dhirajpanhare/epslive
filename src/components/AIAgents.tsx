@@ -211,8 +211,8 @@ function AIChatBox({ agent, onClose }: { agent: AgentType | null, onClose: () =>
       className={`fixed ${isMaximized ? 'inset-0' : 'bottom-4 right-4 w-full max-w-sm h-3/4 max-h-[600px]'} z-50 bg-white dark:bg-gray-900 shadow-2xl rounded-xl flex flex-col border border-blue-500/30`}
     >
       {/* Chat Header - Title and Close button color updated to Blue */}
-      <div className={`flex justify-between items-center p-4 bg-blue-600 text-white rounded-t-xl shadow-md`}>
-        <div className="flex items-center">
+      <div className={`flex justify-between items-center p-4 bg-[#1D4ED8] text-white rounded-t-xl shadow-md`}>
+        <div className="flex items-center ">
           <Bot className="w-6 h-6 mr-2" /> {/* AI Icon */}
           <div>
             <h4 className="text-lg font-bold">AI Agent</h4>
@@ -343,10 +343,10 @@ export default function AIAgents() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-light border border-blue-300/50 mb-6"
           >
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium text-primary">12 AI-Powered Agents</span>
+            <Sparkles className="w-4 h-4 text-blue-500" />
+            <span className="text-sm font-medium  text-blue-600">12 AI-Powered Agents</span>
           </motion.div>
           
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold lato-bold mb-6 leading-tight">

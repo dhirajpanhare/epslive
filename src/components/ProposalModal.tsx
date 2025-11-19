@@ -274,20 +274,20 @@ export default function ProposalModal({ isOpen, onClose }: ProposalModalProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.1 }}
-                    className="p-6 bg-gradient-to-br from-[#0A6EAA]/10 to-[#14508C]/10 dark:from-[#0A6EAA]/20 dark:to-[#14508C]/20 rounded-xl border border-[#0A6EAA]/20 dark:border-[#0A6EAA]/30"
+                    className="p-6 bg-gradient-to-br from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF] dark:to-[#14508C]/20 rounded-xl border border-[#0A6EAA]/20 dark:border-[#0A6EAA]/30"
                   >
                     <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">
                       Development Package
                     </h3>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#0A6EAA] mt-2 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full gradient-light mt-2 flex-shrink-0" />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
                           A one-time engagement to design, build, and deploy your custom AI solution
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#0A6EAA] mt-2 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full gradient-light mt-2 flex-shrink-0" />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
                          Contact us for a personalized proposal.
                         </span>
@@ -300,20 +300,20 @@ export default function ProposalModal({ isOpen, onClose }: ProposalModalProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
-                    className="p-6 bg-gradient-to-br from-[#0082BE]/10 to-[#0A64A0]/10 dark:from-[#0082BE]/20 dark:to-[#0A64A0]/20 rounded-xl border border-[#0082BE]/20 dark:border-[#0082BE]/30"
+                    className="p-6 bg-gradient-to-br from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF] dark:to-[#0A64A0]/20 rounded-xl border border-[#0082BE]/20 dark:border-[#0082BE]/30"
                   >
                     <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">
                       Monthly Operation
                     </h3>
                     <ul className="space-y-3">
                       <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#0082BE] mt-2 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full gradient-light mt-2 flex-shrink-0" />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
                          Hosting, maintenance, and ongoing support included.
                         </span>
                       </li>
                       <li className="flex items-start gap-3">
-                        <div className="w-2 h-2 rounded-full bg-[#0082BE] mt-2 flex-shrink-0" />
+                        <div className="w-2 h-2 rounded-full gradient-light mt-2 flex-shrink-0" />
                         <span className="text-sm text-slate-700 dark:text-slate-300">
                           Reach out to discuss your specific needs.
                         </span>
@@ -326,7 +326,7 @@ export default function ProposalModal({ isOpen, onClose }: ProposalModalProps) {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
-                    className="p-6 bg-gradient-to-br from-[#14508C]/10 to-[#0A6EAA]/10 dark:from-[#14508C]/20 dark:to-[#0A6EAA]/20 rounded-xl border border-[#14508C]/20 dark:border-[#14508C]/30"
+                    className="p-6 bg-gradient-to-br from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF] dark:to-[#0A6EAA]/20 rounded-xl border border-[#14508C]/20 dark:border-[#14508C]/30"
                   >
                     <h3 className="text-xl font-bold mb-4 text-slate-900 dark:text-white">
                       What's Included
@@ -371,7 +371,7 @@ export default function ProposalModal({ isOpen, onClose }: ProposalModalProps) {
                     </Button>
                     <Button
                       size="lg"
-                      className="flex-1 gradient-blue text-white"
+                      className="flex-1 gradient-light text-white"
                       onClick={handleSubmit}
                     >
                       Get Detailed Proposal
