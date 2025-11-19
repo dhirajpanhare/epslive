@@ -1,6 +1,7 @@
 "use client"
 
-import { Facebook, Twitter, Linkedin, Github, Mail } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Github, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   const links = {
@@ -45,13 +46,15 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2">
-            <div className="text-2xl font-bold bg-linear-to-r from-[#0A6EAA] via-[#0A64A0] to-[#14508C] bg-clip-text text-transparent mb-4">
-              EnProSys
+            <div className="text-2xl font-bold bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700  bg-clip-text text-transparent mb-4">
+             <Link to="/" className="flex items-center">
+                    <img src="/logo1.png" alt="EnProSys" className="h-10 md:h-12 w-auto" />
+                  </Link>
             </div>
-            <p className="text-muted-foreground mb-6 max-w-xs">
+            <p className="text-muted-foreground mb-6 max-w-xs second">
               Transforming ideas into exceptional digital experiences that drive business growth and user engagement.
             </p>
-            <p className="text-muted-foreground mb-6 max-w-xs">
+            <p className="text-muted-foreground mb-6 max-w-xs second">
               Plot no. 17-A, Electronics Complex,
               Pardeshipura, Indore, Madhya Pradesh, India 452003
 
@@ -79,7 +82,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Product</h3>
             <ul className="space-y-3">
               {links.product.map((link) => (
-                <li key={link.label}>
+                <li key={link.label} className="nav-text">
                   <a
                     href={link.href}
                     className="text-muted-foreground hover:text-foreground transition-colors"
@@ -96,7 +99,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-3">
               {links.company.map((link) => (
-                <li key={link.label}>
+                <li key={link.label} className="nav-text">
                   <a
                     href={link.href}
                     className="text-muted-foreground hover:text-foreground transition-colors"
@@ -113,7 +116,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-3">
               {links.resources.map((link) => (
-                <li key={link.label}>
+                <li key={link.label} className="nav-text">
                   <a
                     href={link.href}
                     className="text-muted-foreground hover:text-foreground transition-colors"
@@ -130,7 +133,7 @@ export default function Footer() {
             <h3 className="font-semibold mb-4">Legal</h3>
             <ul className="space-y-3">
               {links.legal.map((link) => (
-                <li key={link.label}>
+                <li key={link.label} className="nav-text">
                   <a
                     href={link.href}
                     className="text-muted-foreground hover:text-foreground transition-colors"

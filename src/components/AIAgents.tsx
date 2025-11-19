@@ -41,8 +41,9 @@ const customAgents: AgentType[] = [
     icon: Sparkles,
     name: "PM Agent",
     title: "AI Product Manager",
-    gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
-    bgGradient: "from-blue-50 to-blue-100 dark:from-[#0A6EAA]/10 dark:to-[#14508C]/10",
+        gradient: "from-[#0082BE] via-[#0A6EAA] to-[#14508C]",
+    // gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
+     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     initialPrompt: "Generate a detailed product specification for a new feature: 'Real-time collaborative editing' in a cloud document app."
   },
   {
@@ -50,7 +51,7 @@ const customAgents: AgentType[] = [
     name: "IT Support",
     title: "AI IT Support Agent",
     gradient: "from-[#0082BE] via-[#0A6EAA] to-[#14508C]",
-    bgGradient: "from-blue-50 to-blue-100 dark:from-[#0082BE]/10 dark:to-[#0A64A0]/10",
+      bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     initialPrompt: "Describe the steps to troubleshoot a 'DNS server not responding' error on a Windows machine."
   },
   {
@@ -58,7 +59,7 @@ const customAgents: AgentType[] = [
     name: "HR Assistant",
     title: "AI HR Assistant",
     gradient: "from-[#0A6EAA] via-[#14508C] to-[#144682]",
-    bgGradient: "from-blue-50 to-blue-100 dark:from-[#0A6EAA]/10 dark:to-[#144682]/10",
+     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     initialPrompt: "Draft a concise company-wide announcement about the updated remote work policy."
   },
   {
@@ -66,7 +67,7 @@ const customAgents: AgentType[] = [
     name: "Finance",
     title: "AI Finance Analyst",
     gradient: "from-[#0082BE] via-[#0A64A0] to-[#14508C]",
-    bgGradient: "from-blue-50 to-blue-100 dark:from-[#0082BE]/10 dark:to-[#14508C]/10",
+     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     initialPrompt: "Explain the key differences between CAPEX and OPEX and provide three examples for each."
   },
   {
@@ -74,7 +75,7 @@ const customAgents: AgentType[] = [
     name: "Sales Support",
     title: "AI Sales Support",
     gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
-    bgGradient: "from-blue-50 to-blue-100 dark:from-[#0A6EAA]/10 dark:to-[#14508C]/10",
+    bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     initialPrompt: "Write a cold email subject line and opening paragraph targeting SMEs in the food delivery sector."
   },
   {
@@ -83,7 +84,7 @@ const customAgents: AgentType[] = [
     title: "AI Logistics Coordinator",
    gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
     // gradient: "from-[#0082BE] via-[#0A6EAA] to-[#0A64A0]",
-    bgGradient: "from-blue-50 to-blue-100 dark:from-[#0082BE]/10 dark:to-[#0A64A0]/10",
+      bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     initialPrompt: "What are the common challenges in 'last-mile delivery' and how can AI address them?"
   },
   // Agents 7-12
@@ -93,7 +94,7 @@ const customAgents: AgentType[] = [
     title: "AI Health Assistant",
     gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
     // gradient: "from-[#F25C54] via-[#D94F45] to-[#BF433C]",
-   bgGradient: "from-blue-50 to-blue-100 dark:from-[#0082BE]/10 dark:to-[#0A64A0]/10",
+     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     // bgGradient: "from-red-50 to-red-100 dark:from-[#F25C54]/10 dark:to-[#BF433C]/10",
     initialPrompt: "Summarize the key regulations in HIPAA regarding patient data privacy."
   },
@@ -103,7 +104,7 @@ const customAgents: AgentType[] = [
     title: "AI Admin Assistant",
     gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
     // gradient: "from-[#5D6D7E] via-[#4A5766] to-[#39424D]",
-   bgGradient: "from-blue-50 to-blue-100 dark:from-[#0082BE]/10 dark:to-[#0A64A0]/10",
+    bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     // bgGradient: "from-gray-50 to-gray-100 dark:from-[#5D6D7E]/10 dark:to-[#39424D]/10",
     initialPrompt: "Draft an agenda for a 'Quarterly Strategy Review' meeting."
   },
@@ -113,7 +114,7 @@ const customAgents: AgentType[] = [
     title: "AI Education Tutor",
    gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
     // gradient: "from-[#FF9900] via-[#E68A00] to-[#CC7A00]",
-   bgGradient: "from-blue-50 to-blue-100 dark:from-[#0082BE]/10 dark:to-[#0A64A0]/10",
+     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     // bgGradient: "from-yellow-50 to-yellow-100 dark:from-[#FF9900]/10 dark:to-[#CC7A00]/10",
     initialPrompt: "Create a simple multiple-choice quiz about the solar system for 5th graders."
   },
@@ -133,7 +134,7 @@ const customAgents: AgentType[] = [
     title: "AI Travel Booker",
    gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
     // gradient: "from-[#3F51B5] via-[#3949AB] to-[#303F9F]",
-   bgGradient: "from-blue-50 to-blue-100 dark:from-[#0082BE]/10 dark:to-[#0A64A0]/10",
+    bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     // bgGradient: "from-indigo-50 to-indigo-100 dark:from-[#3F51B5]/10 dark:to-[#303F9F]/10",
     initialPrompt: "Suggest a 3-day itinerary for a business trip to Tokyo, including flight and hotel suggestions."
   },
@@ -143,7 +144,7 @@ const customAgents: AgentType[] = [
     title: "AI Auto Advisor",
    gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
     // gradient: "from-[#FFC107] via-[#FFB300] to-[#FFA000]",
-  bgGradient: "from-blue-50 to-blue-100 dark:from-[#0082BE]/10 dark:to-[#0A64A0]/10",
+  bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
     // bgGradient: "from-amber-50 to-amber-100 dark:from-[#FFC107]/10 dark:to-[#FFA000]/10",
     initialPrompt: "Explain the signs of a failing catalytic converter and the immediate steps a driver should take."
   }
@@ -299,7 +300,7 @@ export default function AIAgents() {
       <div className={`relative h-full bg-gradient-to-br ${agent.bgGradient} backdrop-blur-sm border border-gray-200 dark:border-gray-800 rounded-xl p-4 md:p-5 shadow-lg hover:shadow-xl transition-all duration-300`}>
         
         {/* Reduced Icon Size and Margin */}
-        <div className={`w-9 h-9 md:w-10 md:h-10 rounded-lg bg-gradient-to-r ${agent.gradient} p-2 mb-3 shadow-lg group-hover:scale-105 transition-transform duration-300`}>
+        <div className={`w-9 h-9 md:w-10 md:h-10 rounded-lg gradient-light p-2 mb-3 shadow-lg group-hover:scale-105 transition-transform duration-300`}>
           <agent.icon className="w-full h-full text-white" />
         </div>
 
@@ -348,9 +349,9 @@ export default function AIAgents() {
             <span className="text-sm font-medium text-primary">12 AI-Powered Agents</span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold lato-bold mb-6 leading-tight">
             See AI Agents{" "}
-            <span className="bg-linear-to-r from-[#0A6EAA] via-[#0A64A0] to-[#14508C] dark:from-[#0082BE] dark:via-[#0A6EAA] dark:to-[#0A64A0] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700 bg-clip-text text-transparent">
              Solve Real Problems
             </span>
           </h2>
@@ -359,7 +360,7 @@ export default function AIAgents() {
             Built in-house to help you ship 10x faster
           </p>
           
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base md:text-lg second text-muted-foreground max-w-3xl mx-auto leading-relaxed">
            Click on any agent card to start a simulated chat and see a live demonstration of its capabilities and initial prompt!
           </p>
         </motion.div>

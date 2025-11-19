@@ -30,13 +30,14 @@ export default function ProblemSolution() {
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 lato-bold leading-tight ">
             The Operational Gap is
-            <span className=" bg-linear-to-r from-[#0A6EAA] via-[#0A64A0] to-[#14508C] bg-clip-text text-transparent">
+            <br />
+            <span className=" bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700   bg-clip-text text-transparent lato-bold ">
               {" "}Killing You
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto second">
             Traditional development is too slow and expensive for modern startups
           </p>
         </motion.div>
@@ -63,7 +64,7 @@ export default function ProblemSolution() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-4 rounded-xl border border-red-200 dark:border-red-900/30 bg-red-50/50 dark:bg-red-950/10"
+                  className="flex items-start gap-3 p-4 nav-text rounded-xl border border-red-200 dark:border-red-900/30 bg-red-50/50 dark:bg-red-950/10"
                 >
                   <div className="w-2 h-2 mt-2 rounded-full bg-red-500 shrink-0" />
                   <p className="text-foreground/90">{problem}</p>
@@ -93,7 +94,7 @@ export default function ProblemSolution() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="flex items-start gap-3 p-4 rounded-xl border border-green-200 dark:border-green-900/30 bg-green-50/50 dark:bg-green-950/10"
+                  className="flex items-start gap-3 p-4 nav-text rounded-xl border border-green-200 dark:border-green-900/30 bg-green-50/50 dark:bg-green-950/10"
                 >
                   <CheckCircle2 className="w-5 h-5 mt-0.5 text-green-600 dark:text-green-400 shrink-0" />
                   <p className="text-foreground/90">{solution}</p>

@@ -36,11 +36,11 @@ export default function Navigation() {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="EnProSys" className="h-10 md:h-12 w-auto" />
+            <img src="/logo1.png" alt="EnProSys" className="h-10 md:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 nav-text">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -52,11 +52,11 @@ export default function Navigation() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
-            <Button size="lg" className="gradient-blue text-white" onClick={() => setIsEngageTalentOpen(true)}>
+          <div className="hidden md:flex items-center gap-4 nav-text">
+            <Button size="lg" className="gradient-light  text-white font-bold Lato-Regular" onClick={() => setIsEngageTalentOpen(true)}>
               Engage Talent
             </Button>
-           <Link to="https://epsiso.enprosysinfotech.com/"> <Button size="lg" className="gradient-blue text-white">
+           <Link to="https://epsiso.enprosysinfotech.com/"> <Button size="lg" className="gradient-light text-white font-bold">
               <User/>
               Emp Corner
             </Button></Link>

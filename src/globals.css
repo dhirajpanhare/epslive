@@ -4,7 +4,8 @@
 /* Updated: 2025-11-14T12:03:31.525Z */
 @import "tailwindcss";
 @import "tw-animate-css";
-
+@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+NSW+ACT+Cursive:wght@400..700&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap');
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -148,4 +149,43 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none;  /* Chrome, Safari, Opera */
 }
+
+/* globals.css or component-specific CSS */
+
+/* Light Glass Effect */
+.glass-light {
+  backdrop-filter: blur(8px);
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Very faint border */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Light Mode Gradient Button (Bold Blue/Cyan) */
+.gradient-light {
+  background: linear-gradient(90deg, #1D4ED8, #0EA5E9, #4F46E5); /* Blue, Cyan, Indigo */
+  border: none;
+}
+.gradient-light:hover {
+  background: linear-gradient(90deg, #3B82F6, #38BDF8, #6366F1); /* Slightly lighter/brighter on hover */
+}
+.lato-bold {
+  font-family: "Roboto Slab", serif;
+  font-weight: 1000;
+  text-transform: uppercase;
+}
+.second{
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.nav-text{
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+.bg-futuristic-grid {
+   background-image: linear-gradient(to right, rgba(100, 100, 100, 0.1) 1px, transparent 1px),
+                     linear-gradient(to bottom, rgba(100, 100, 100, 0.1) 1px, transparent 1px);
+   background-size: 40px 40px;
+}/* Custom CSS for Futuristic Dark Background */
 

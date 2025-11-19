@@ -46,10 +46,10 @@ export default function SpeedComparison() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-linear-to-r from-[#0A6EAA] via-[#0A64A0] to-[#14508C] bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold lato-bold mb-4 bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700 bg-clip-text text-transparent">
             Measurable Impact
           </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto second">
             See the real difference AI-powered solutions make across key business metrics
           </p>
         </motion.div>
@@ -69,7 +69,7 @@ export default function SpeedComparison() {
               <span className="text-sm font-medium">Before AI</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-6 h-6 bg-linear-to-r from-[#0A6EAA] to-[#14508C] rounded"></div>
+              <div className="w-6 h-6 bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700 rounded"></div>
               <span className="text-sm font-medium">After AI</span>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function SpeedComparison() {
                         whileInView={{ height: `${(metric.after / metric.maxValue) * 100}%` }}
                         viewport={{ once: true }}
                         transition={{ duration: 1.2, delay: 0.2 }}
-                        className="w-full bg-linear-to-r from-[#0A6EAA] via-[#0A64A0] to-[#14508C] rounded-t-lg flex items-end justify-center pb-2"
+                        className="w-full bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700 rounded-t-lg flex items-end justify-center pb-2"
                       >
                         <span className="text-white text-xs md:text-sm font-bold">
                           {metric.after}

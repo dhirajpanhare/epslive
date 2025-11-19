@@ -32,7 +32,7 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="py-32 gradient-blue-subtle relative overflow-hidden">
+    <section id="process" className="py-32 from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF] relative overflow-hidden">
       <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full blur-3xl" />
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-400/10 rounded-full blur-3xl" />
       
@@ -46,11 +46,11 @@ export default function ProcessSection() {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             How It{" "}
-            <span className="bg-linear-to-r from-[#0A6EAA] via-[#0A64A0] to-[#14508C] bg-clip-text text-transparent">
+            <span className="bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700 bg-clip-text text-transparent">
               Works
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto second">
             From idea to production in four simple steps
           </p>
         </motion.div>
@@ -84,7 +84,7 @@ export default function ProcessSection() {
                   {/* Icon */}
                   <div className="relative">
                     <div className="w-32 h-32 rounded-full bg-white dark:bg-gray-900 shadow-2xl flex items-center justify-center border-4 border-primary/20">
-                      <div className="w-24 h-24 rounded-full gradient-blue flex items-center justify-center">
+                      <div className="w-24 h-24 rounded-full gradient-light flex items-center justify-center">
                         <Icon className="w-12 h-12 text-white" />
                       </div>
                     </div>
