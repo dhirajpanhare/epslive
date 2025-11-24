@@ -33,7 +33,7 @@ export default function ProblemSolution() {
           <h2 className="text-4xl md:text-6xl font-bold mb-6 lato-bold leading-tight ">
             The Operational Gap is
             <br />
-            <span className=" bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700   bg-clip-text text-transparent lato-bold ">
+            <span className="bg-gradient-to-r from-black to-gray-800bg-gradient-to-r from-black to-gray-800   bg-clip-text text-transparent lato-bold ">
               {" "}Killing You
             </span>
           </h2>
