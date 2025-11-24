@@ -351,7 +351,7 @@ export default function AIAgents() {
           
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold lato-bold mb-6 leading-tight">
             See AI Agents{" "}
-            <span className="bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-black to-gray-800bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
              Solve Real Problems
             </span>
           </h2>

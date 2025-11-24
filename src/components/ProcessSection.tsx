@@ -46,7 +46,7 @@ export default function ProcessSection() {
         >
           <h2 className="text-4xl md:text-6xl font-bold mb-6">
             How It{" "}
-            <span className="bg-linear-to-r  from-blue-700 via-cyan-500 to-indigo-700 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-black to-gray-800 bg-clip-text text-transparent">
               Works
             </span>
           </h2>

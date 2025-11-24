@@ -92,8 +92,8 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-          >
-            <span className="bg-gradient-to-r lato-bold from-blue-700 via-cyan-500 to-indigo-700 bg-clip-text text-transparent">
+          > 
+            <span className="lato-bold bg-gradient-to-r bg-gradient-to-r from-black to-gray-800 text-6xl bg-clip-text text-transparent">
      Ready to Transform Your Business with Smart AI Technology?
             </span>
             {/* <br className="hidden sm:block" />

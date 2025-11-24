@@ -5,29 +5,25 @@ import { Zap, Rocket, Code, Smartphone, Database, ShieldCheck, ChevronLeft, Chev
 type Service = {
   icon: any
   title: string
-  description: string
+
   bullets: string[]
   gradient?: string
   bgGradient?: string
 }
 
-// NOTE: I'm defining the services array outside the component to keep the diff clean, 
-// but in your original code, it's fine to keep it inside the 'Services' component.
 const services: Service[] = [
   {
     icon: Zap,
     title: "AI That Predicts and Automates",
-    description:
-      "Intelligent AI systems that work 24/7 — from chatbots that answer instantly to models that predict what happens next.",
-    bullets: ["Smart Chatbots", "Predictive Analytics", "Process Automation"],
+  
+      bullets: ["Smart Chatbots", "Predictive Analytics", "Process Automation"],
     gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
   },
   {
     icon: Rocket,
     title: "Software That Gets You to Market Faster",
-    description:
-      "Custom business platforms and mobile apps designed, developed, and deployed with agility — no long IT cycles.",
+
     bullets: ["Custom Platforms", "Mobile Apps", "Rapid Development"],
     gradient: "from-[#0082BE] via-[#0A6EAA] to-[#14508C]",
     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
@@ -35,36 +31,32 @@ const services: Service[] = [
   {
     icon: Code,
     title: "Digital Tools That Think for You",
-    description:
-      "Streamline operations and reduce human errors with intuitive tools powered by automation, not endless spreadsheets.",
-    bullets: ["Workflow Automation", "Smart Dashboards", "Data Integration"],
+   
+      bullets: ["Workflow Automation", "Smart Dashboards", "Data Integration"],
     gradient: "from-[#0A6EAA] via-[#14508C] to-[#144682]",
     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
   },
   {
     icon: Database,
     title: "AI-Powered ERP Solutions",
-    description:
-      "Reimagine your business operations with advanced AI-driven ERP systems.",
-    bullets: ["AI-powered automation and analytics", "Real-time data integration across all departments", "Flexible, cloud-ready platforms for agile teams"],
+    
+      bullets: ["AI-powered automation and analytics", "Real-time data integration across all departments", "Flexible, cloud-ready platforms for agile teams"],
     gradient: "from-[#0082BE] via-[#0A64A0] to-[#14508C]",
     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
   },
   {
     icon: ShieldCheck,
     title: "Enterprise Security & Performance",
-    description:
-      "Robust security implementations and performance optimization for mission-critical business operations.",
-    bullets: ["Security Audits", "Performance Testing", "System Monitoring"],
+    
+      bullets: ["Security Audits", "Performance Testing", "System Monitoring"],
     gradient: "from-[#0A6EAA] via-[#0A64A0] to-[#14508C]",
     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
   },
   {
     icon: Smartphone,
     title: "Cloud & Mobile Solutions",
-    description:
-      "Scale your business with cloud infrastructure and mobile-first applications that work everywhere.",
-    bullets: ["Cloud Migration", "Mobile Development", "Scalable Architecture"],
+    
+      bullets: ["Cloud Migration", "Mobile Development", "Scalable Architecture"],
     gradient: "from-[#0082BE] via-[#0A6EAA] to-[#0A64A0]",
     bgGradient: "from-[#E0ECFF] via-[#D8F7FF] to-[#E6E8FF]",
   },
@@ -223,8 +215,7 @@ function ServiceCarousel({ services: infiniteServices }: { services: Service[] }
 
                   <div className="flex-1 flex flex-col overflow-hidden">
                     <h3 className="text-lg md:text-xl font-bold z-10 line-clamp-2  'Lato', sans-serif">{s.title}</h3>
-                    <p className="text-muted-foreground mt-2 text-sm md:text-base z-10 line-clamp-3 nav-text">{s.description}</p>
-
+              
                     <ul className="space-y-1.5 z-10 text-sm mt-auto nav-text">
                       {s.bullets.map((b) => (
                         <li key={b} className="flex items-start gap-2 text-sm line-clamp-1">
